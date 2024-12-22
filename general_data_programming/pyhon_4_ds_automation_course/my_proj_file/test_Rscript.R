@@ -1,0 +1,34 @@
+# Test R installation
+print("Hello, R is working perfectly!")
+
+# Basic arithmetic operation
+result <- 2 + 2
+print(paste("2 + 2 =", result))
+
+# Basic plot
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+plot(x, y, main="Basic Plot", xlab="X-axis", ylab="Y-axis")
+
+# Check installed packages
+installed_packages <- installed.packages()
+print("Installed packages:")
+print(installed_packages[, "Package"])
+
+
+# Test ggplot2 functionality
+#%%
+library(ggplot2)
+
+# Create a simple dataframe
+df <- data.frame(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10)
+)
+
+# Create a ggplot
+ggplot(df, aes(x = x, y = y)) +
+    geom_point() +
+    ggtitle("Basic ggplot2 Plot") +
+    xlab("X-axis") +
+    ylab("Y-axis")
